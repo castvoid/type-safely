@@ -7,6 +7,13 @@ This project aims to mitigate these threats by bringing the guarantees of confid
 
 In order to give a reasonable confidence in the security properties of the new protocol, the core of the cryptographic protocol will be based upon an existing, well-studied one, such as Bluetooth's \textit{Simple Secure Pairing}. The implementation will be made from scratch, and will consist of both software for the microcontroller inside the keyboards, and host-side drivers and keyboard management software for Ubuntu Linux.
 
+More information can be found in [my dissertation](dissertation.pdf).
+
+<img width="959" alt="architecture diagram" src="https://user-images.githubusercontent.com/1313396/147395353-6a6de19b-b3aa-4056-a52d-69284183b5a4.png">
+
+
+I’d like to thank my supervisor and Director of Studies, Prof Frank Stajano, for all his support and guidance throughout the project, and Dr Markus Kuhn for proposing this project.
+
 ## Building
 
 #### Firmware
