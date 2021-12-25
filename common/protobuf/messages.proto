@@ -1,0 +1,57 @@
+syntax = "proto3";
+package typesafely_protocol;
+
+import "messages-connection.proto";
+import "messages-pairing.proto";
+import "messages-session.proto";
+
+
+// ========= GENERAL
+message Error {
+  enum RecoveryAction {
+    RESET_CONNECTION = 0;
+    RESTART_PAIRING = 1;
+    IGNORE = 2;
+  }
+
+  string error_type = 1;
+  string error_description = 2;
+  RecoveryAction recovery_action = 3;
+}
+
+message DebugLog {
+  string text = 1;
+}
+
+
+// ========= On-the-wire
+message MessageWrapper {
+  oneof message {
+    // General
+    Error message_typesafely_protocol_Error = 1001;
+    DebugLog message_typesafely_protocol_DebugLog = 1002;
+
+    // Connection
+    connection.ConnectRequest message_typesafely_protocol_connection_ConnectRequest = 1003;
+    connection.ConnectResponse message_typesafely_protocol_connection_ConnectResponse = 1004;
+
+    // Pairing
+    pairing.InitiatePairingRequest message_typesafely_protocol_pairing_InitiatePairingRequest = 1005;
+    pairing.InitiatePairingResponse message_typesafely_protocol_pairing_InitiatePairingResponse = 1006;
+    pairing.BeginAuthenticationRequest message_typesafely_protocol_pairing_BeginAuthenticationRequest = 1007;
+    pairing.BeginAuthenticationResponse message_typesafely_protocol_pairing_BeginAuthenticationResponse = 1008;
+    pairing.CommitmentExchangeRequest message_typesafely_protocol_pairing_CommitmentExchangeRequest = 1009;
+    pairing.CommitmentExchangeResponse message_typesafely_protocol_pairing_CommitmentExchangeResponse = 11;
+    pairing.NonceExchangeRequest message_typesafely_protocol_pairing_NonceExchangeRequest = 1011;
+    pairing.NonceExchangeResponse message_typesafely_protocol_pairing_NonceExchangeResponse = 1012;
+    pairing.ParameterConfirmationRequest message_typesafely_protocol_pairing_ParameterConfirmationRequest = 1013;
+    pairing.ParameterConfirmationResponse message_typesafely_protocol_pairing_ParameterConfirmationResponse = 1014;
+
+    // Session
+    session.OpenSessionRequest message_typesafely_protocol_session_OpenSessionRequest = 1015;
+    session.OpenSessionResponse message_typesafely_protocol_session_OpenSessionResponse = 1016;
+    session.UpgradeRequest message_typesafely_protocol_session_UpgradeRequest = 1017;
+    session.UpgradeResponse message_typesafely_protocol_session_UpgradeResponse = 1018;
+    session.Packet message_typesafely_protocol_session_Packet = 1019;
+  }
+}

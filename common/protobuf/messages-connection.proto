@@ -1,0 +1,13 @@
+syntax = "proto3";
+package typesafely_protocol.connection;
+
+
+// ========= Connection initialisation
+message ConnectRequest {
+  bytes id_host = 1;
+}
+
+message ConnectResponse {
+  bool device_recognises_host_id = 1;
+  bytes id_device = 2;
+}

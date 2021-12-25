@@ -1,0 +1,7 @@
+typesafely_protocol.session.ECDHPublicKey.public_key						max_size:32
+
+typesafely_protocol.session.OpenSessionRequest.host_authentication_data		max_size:16
+typesafely_protocol.session.OpenSessionResponse.device_authentication_data	max_size:16
+
+typesafely_protocol.session.Packet.ciphertext								max_size:8
+typesafely_protocol.session.Packet.tag										max_size:16

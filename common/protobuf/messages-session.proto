@@ -1,0 +1,30 @@
+syntax = "proto3";
+package typesafely_protocol.session;
+
+
+// ========= Session
+message ECDHPublicKey {
+  bytes public_key = 1;
+}
+
+message OpenSessionRequest {
+  bytes host_authentication_data = 1;
+  ECDHPublicKey host_ecdh_public_key = 2;
+}
+
+message OpenSessionResponse {
+  bytes device_authentication_data = 1;
+  ECDHPublicKey device_ecdh_public_key = 2;
+}
+
+message UpgradeRequest {
+}
+
+message UpgradeResponse {
+}
+
+message Packet {
+	uint64 sequence_num = 1;
+	bytes ciphertext = 2;
+	bytes tag = 3;
+}

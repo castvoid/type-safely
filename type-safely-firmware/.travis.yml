@@ -1,0 +1,20 @@
+language: cpp
+
+branches:
+  only:
+    - master
+
+addons:
+  apt:
+    sources:
+      - sourceline: ppa:team-gcc-arm-embedded/ppa
+    packages:
+      - gcc-arm-embedded
+
+install:
+  - cd libopencm3
+  - make TARGETS=stm32/f4
+  - cd ..
+
+script:
+  - make PLATFORM=STM32F4_1BITSY -j 8

@@ -1,0 +1,51 @@
+syntax = "proto3";
+package typesafely_protocol.pairing;
+
+
+// ========= Pairing: PKE
+message ECDHPublicKey {
+  bytes public_key = 1;
+}
+
+message InitiatePairingRequest {
+  bool host_recognises_device_id = 1;
+  ECDHPublicKey host_ecdh_public_key = 2;
+}
+
+message InitiatePairingResponse {
+  ECDHPublicKey device_ecdh_public_key = 1;
+}
+
+
+// ========= Pairing: Authentication
+message BeginAuthenticationRequest {
+}
+
+message BeginAuthenticationResponse {
+}
+
+message CommitmentExchangeRequest {
+  bytes host_commitment = 1;
+}
+
+message CommitmentExchangeResponse {
+  bytes device_commitment = 1;
+}
+
+message NonceExchangeRequest {
+  bytes host_nonce = 1;
+}
+
+message NonceExchangeResponse {
+  bytes device_nonce = 1;
+}
+
+
+// ========= Pairing: LTK Generation
+message ParameterConfirmationRequest {
+  bytes host_parameter_confirmation = 1;
+}
+
+message ParameterConfirmationResponse {
+  bytes device_parameter_confirm = 1;
+}

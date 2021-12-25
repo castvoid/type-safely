@@ -1,0 +1,4 @@
+typesafely_protocol.Error.error_type								max_size:64
+typesafely_protocol.Error.error_description							max_size:512
+
+typesafely_protocol.DebugLog.text									max_size:512

@@ -1,0 +1,2 @@
+typesafely_protocol.connection.ConnectRequest.id_host				max_size:7
+typesafely_protocol.connection.ConnectResponse.id_device			max_size:7

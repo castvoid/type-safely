@@ -1,0 +1,10 @@
+typesafely_protocol.pairing.ECDHPublicKey.public_key						max_size:32
+
+typesafely_protocol.pairing.CommitmentExchangeRequest.host_commitment		max_size:16
+typesafely_protocol.pairing.CommitmentExchangeResponse.device_commitment	max_size:16
+
+typesafely_protocol.pairing.NonceExchangeRequest.host_nonce					max_size:16
+typesafely_protocol.pairing.NonceExchangeResponse.device_nonce				max_size:16
+
+typesafely_protocol.pairing.ParameterConfirmationRequest.host_parameter_confirmation	max_size:16
+typesafely_protocol.pairing.ParameterConfirmationResponse.device_parameter_confirm		max_size:16
