@@ -1,6 +1,8 @@
 # type-safely
 _Cambridge Computer Science Tripos -- Part II_
 
+> ⚠️ This project includes novel cryptographic primitive implementations and protocols that have not been audited. Use at your peril.
+
 Hardware USB keyloggers and programmable USB keystroke injection tools are widely available, inexpensive, and small enough to be easily concealable. Such devices can even be embedded inside a standard-size USB connector, making their detection nearly impossible. These devices allow the interception of sensitive details and the spoofing of keyboard input, so the threats to computer users can range from theft of sensitive information to the complete compromise of their computer.
 
 This project aims to mitigate these threats by bringing the guarantees of confidentiality, integrity, authentication, and authorisation---provided by protocols such as TLS and Bluetooth---to communication with USB keyboards. This will be achieved by designing and implementing a new protocol, on top of the USB stack, for communication with USB keyboards.
